@@ -1,0 +1,4 @@
+page {
+    background-color: #EFEFEF;
+}
+image{padding:20rpx;width:200rpx;height: 200rpx;}

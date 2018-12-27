@@ -1,0 +1,32 @@
+<view class="page">
+
+    <view  class="page__hd">
+        <view class="page__title">WebIM</view>
+        <view class="page__desc">体验流程</view>
+        <view class="page__desc">1.选择用户</view>
+        <view class="page__desc">2.选择功能</view>
+    </view>
+
+    <view wx:if="{{ show_grid }}" class="page__bd">
+        <view class="weui-grids">
+            <block wx:for="{{grids}}" wx:key="*this">
+                <navigator url="../{{ item.name }}/{{ item.name }}" class="weui-grid weui-grid-2" hover-class="weui-grid_active">
+                    <image class="weui-grid__icon" src="../images/icon_tabbar.png" />
+                    <view class="weui-grid__label">{{item.label }}</view>
+                </navigator>
+            </block>
+        </view>
+    </view>
+
+    <view wx:if="{{ show_user }}" class="page__bd">
+        <view class="weui-grids">
+            <block wx:for="{{ user }}" wx:key="*this">
+                <navigator class="weui-grid weui-grid-2" hover-class="weui-grid_active" data-userid="{{ item.identifier }}"  bindtap="chooseUser">
+                    <image class="weui-grid__icon" src="../images/icon_tabbar.png" />
+                    <view class="weui-grid__label">{{item.label }}</view>
+                </navigator>
+            </block>
+        </view>
+    </view>
+
+</view>

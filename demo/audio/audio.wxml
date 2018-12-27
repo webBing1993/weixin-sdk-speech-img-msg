@@ -1,0 +1,18 @@
+<view class="page">
+    <scroll-view
+            style="height:{{pageHeight}}px;width: 100%;display: flex;flex-direction: column;"
+            scroll-y="true"
+            scroll-top="{{scrollTopVal}}"
+            bindtap="resetInputStatus">
+        <view class="page__hd">
+            <button class="weui-btn mini-btn" type="primary" size="mini" bindlongpress="record_start" bindtouchend="record_end">长按录音</button>
+        </view>
+        <view class="page__bd">
+                <audio controls="true" wx:for="{{sendAudioList}}" class="Audio" src="{{item}}" />
+        </view>
+        <view class="page__bd">
+                <audio controls="true" wx:for="{{recvAudioList}}" class="Audio" src="{{item}}" />
+        </view>
+    </scroll-view>
+</view>
+
